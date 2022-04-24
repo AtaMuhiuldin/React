@@ -11,7 +11,8 @@ class App extends Component {
 
   handleInsertion = () => {
     const data = { id: 3, name: 'Mashaim', address: 'Fsd', number: '03002200200' };
-    const contacts = this.state.Contacts_list.push({ id: 2, name: 'Mashaim', address:'FSD', number:'03002002023' });
+    const contacts = [...this.state.Contacts_list];
+    contacts.push({ id: 2, name: 'Mashaim', address:'FSD', number:'03002002023' });
     console.log('Contact Added.', data, contacts);
     return this.setState({ Contacts_list: contacts });
   }
