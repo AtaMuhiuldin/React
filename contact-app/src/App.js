@@ -1,44 +1,30 @@
-import React, { Component } from 'react';
-import Contacts from './Components/Contact';
-import Navbar from './Components/Navbar';
-import 'bootstrap/dist/css/bootstrap.css';
+import React, { Component } from 'react'
+import Contacts from './Components/Contacts';
+import NavBar from './Components/NavBar';
 
 class App extends Component {
-  state = { 
-    contacts: [
-      {
-        id: 0,
-        number: '0321123321',
-        name: 'Mashaim',
-        address: 'FSD'
-      }
+  state = {
+    Contacts_list: [
+      { id: 1, name: 'Mashaim', address: 'FSD', number: '03332122132' }
     ],
   }
 
-  handleContactadd = (aname,anumber,aaddress) => {
-    console.log('Contact Added.', aname, anumber, aaddress, this.state.contacts);
-    if (anumber !== '' && aname !== '' &&  anumber !== null) {
-      
-      const contact = this.state.contacts.push({
-        id: this.state.contacts.length + 1,
-        number: 'anumber',
-        name: 'aname',
-        address: 'aaddress'
-      });
-
-      console.log('Contacts updated ', {contact}, contact);
-      this.setState({ contacts: contact });
-    }
+  handleInsertion = () => {
+    const data = { id: 3, name: 'Mashaim', address: 'Fsd', number: '03002200200' };
+    const contacts = this.state.Contacts_list.push({ id: 2, name: 'Mashaim', address:'FSD', number:'03002002023' });
+    console.log('Contact Added.', data, contacts);
+    return this.setState({ Contacts_list: contacts });
   }
-  
+
   render() {
+    console.log('App', this.state.Contacts_list);
     return (
       <div>
-        <Navbar
-          onIncrement={this.handleContactadd} 
-          />
+        <NavBar 
+          onInsertion={this.handleInsertion}
+        />
         <Contacts
-          contact={this.state.contacts}
+          contact={this.state.Contacts_list}
         />
       </div>
     );

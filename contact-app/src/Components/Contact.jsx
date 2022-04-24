@@ -1,22 +1,16 @@
-import React, { Component } from 'react'
-import Contact from './Contacts';
+import React, { Component } from 'react';
 
-class Contacts extends Component {
-    render() {
-        console.log('Mapping',this.props.contact);
+class Contact extends Component {
+    render() { 
         return (
-            <div>
-                {
-                    this.props.contact.map(contact =>
-                    <Contact key={contact.id}
-                        contacts={contact}
-                        selected 
-                        />
-                    )
-                }
+            <div className='row px-5 py-4'>
+                <span className='col'>sd</span>
+                <span className='col'>sd</span>
+                <span className='col'>sd</span>
+                <button className='col btn btn-danger'>Delete</button>
             </div>
         );
     }
 }
  
-export default Contacts;
+export default Contact;

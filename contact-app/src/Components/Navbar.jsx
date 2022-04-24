@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
-class navbar extends Component {
-    render() { 
-        const { onIncrement } = this.props;
+class NavBar extends Component {
+    render() {
         return (
-            <div className='row mx-2 px-5 py-3 bg-light'>
-                <input type='text' placeholder='Mobile Number' id='task_number' className='form-control col m-2' />
-                <input type='text' placeholder='Name' id='task_name' className='form-control col m-2' />
-                <input type='text' placeholder='Address' id='task_address' className='form-control col m-2' />
-                <input type='submit' className='btn btn-secondary col m-2' value='Add' onClick={ ()=>onIncrement(document.getElementById('task_name').value,document.getElementById('task_number').value,document.getElementById('task_address').value) } />
+            <div className='navbar nav bg-light px-5'>
+                <span className='navbar-brand col m-2'>Contact App</span>
+                <input className='col form-cotrol m-2' type='text' placeholder='Name' />
+                <input className='col form-cotrol m-2' type='text' placeholder='Address' />
+                <input className='col form-cotrol m-2' type='text' placeholder='Number' />
+                <button className='btn col btn-primary m-2' onClick={()=>this.props.onInsertion()}>Add</button>
             </div>
         );
     }
 }
  
-export default navbar;
+export default NavBar;
